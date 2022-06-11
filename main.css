@@ -92,7 +92,7 @@ footer * {
 
 .grid-bust {
   align-content: center;
-  display: grid;
+  display: inline-flex;
   grid-area: bust;
   align-items: center;
   grid-template-rows: 100%;
@@ -239,7 +239,6 @@ footer * {
     display: block;
     margin-top: 8px; }
     #navSection nav {
-      column-gap: 0px;
       padding: 16px 0px; }
   #resumeContainer {
     display: inline-flex; }
