@@ -27,6 +27,21 @@
   width: 300px;
   height: 150px; }
 
+#BasketballContainer canvas {
+  background-color: white;
+  width: 150px;
+  height: 300px; }
+
+#OlympianContainer canvas {
+  background-color: white;
+  width: 300px;
+  height: 150px; }
+
+#PunchyKickyComponent canvas {
+  background-color: black;
+  width: 300px;
+  height: 150px; }
+
 .tbt-flex-container {
   display: flex; }
 
@@ -55,6 +70,47 @@
 .tbt-navbar {
   width: 100%; }
 
+.bordered-list #list-header {
+  font-size: 1.2em;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black; }
+
+.bordered-list ul:first-of-type li {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black; }
+
+.bordered-list ul:first-of-type li:last-child {
+  border-bottom: 1px solid black; }
+
+.scrolling-list #list-header {
+  font-size: 1.2em; }
+
+.scrolling-list ul:first-of-type {
+  overflow-y: auto; }
+
+.collapsible-list #list-header {
+  font-size: 1.2em;
+  cursor: pointer; }
+
+.collapsible-list ul:first-of-type {
+  overflow-y: hidden; }
+
+.tooltip-list li {
+  position: relative; }
+  .tooltip-list li span {
+    position: absolute;
+    color: black;
+    z-index: 5;
+    border: 2px solid red;
+    width: 100px;
+    height: 100px;
+    background-color: azure;
+    top: 10px;
+    right: 10px; }
+
 * {
   margin: 0;
   padding: 0;
@@ -80,12 +136,33 @@ body {
 header {
   align-items: center;
   display: flex;
-  text-align: center; }
-  header h3 {
+  text-align: center;
+  background-color: #0A091B; }
+  header * {
     flex: auto; }
 
-footer * {
-  flex: auto; }
+#familyOlympics li {
+  background-color: azure; }
+
+#familyOlympics #details {
+  display: grid; }
+  #familyOlympics #details div:nth-of-type(2n+1) {
+    font-weight: bold;
+    grid-column: 1;
+    border: 1px solid black; }
+  #familyOlympics #details div:nth-of-type(2n) {
+    background-color: azure;
+    grid-column: 2;
+    border: 1px solid black; }
+
+.bold {
+  font-weight: bold; }
+
+footer {
+  display: flex;
+  background-color: black; }
+  footer * {
+    flex: auto; }
 
 .bust-circle {
   height: 100%; }
@@ -126,14 +203,12 @@ footer * {
 
 .grid-header {
   align-items: center;
-  background-color: #0A091B;
   color: white;
   display: flex;
   text-align: center; }
 
 .grid-footer {
   align-items: center;
-  background-color: #0A091B;
   color: white;
   display: flex;
   padding-bottom: 8px;
