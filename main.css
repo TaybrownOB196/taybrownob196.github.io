@@ -42,6 +42,161 @@
   width: 300px;
   height: 150px; }
 
+body {
+  background-color: #B6B7C7; }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Copperplate; }
+
+#root {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  flex-direction: column; }
+  #root header {
+    width: 100%;
+    background-color: #FFFFFF;
+    text-align: center; }
+  #root p {
+    text-align: justify;
+    font-size: .88em; }
+  #root #profileImage-container {
+    width: 192px;
+    height: 192px; }
+  #root #content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    #root #content-container div img, #root #content-container p {
+      padding: 8px 0px;
+      width: 80%;
+      min-width: 300px;
+      text-align: center; }
+  #root .navbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    height: inherit;
+    background: white;
+    align-items: center; }
+    #root .navbar p {
+      text-align: justify; }
+    #root .navbar.horizontal {
+      height: 32px; }
+      #root .navbar.horizontal a:first-of-type {
+        padding-left: 100px; }
+  #root #nav-container {
+    position: absolute;
+    left: 33%;
+    width: 67%;
+    height: 45px; }
+    #root #nav-container.horizontal {
+      position: initial;
+      left: initial;
+      width: 100%;
+      height: 32px; }
+  #root #toggleViewLink {
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    align-self: center; }
+    #root #toggleViewLink.horizontal {
+      align-self: flex-end; }
+  #root #profileLayout {
+    align-items: center;
+    background-color: #63678B;
+    border-bottom-right-radius: 64px;
+    border-bottom-left-radius: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    height: 99%;
+    position: absolute;
+    width: 33%;
+    min-width: 33%; }
+    #root #profileLayout #intro-container {
+      background-color: #FFFFFF;
+      padding: 8px;
+      padding-bottom: 32px;
+      border-radius: 24px; }
+    #root #profileLayout #profileImage {
+      border-radius: inherit;
+      object-fit: contain;
+      height: 192px;
+      width: 192px; }
+    #root #profileLayout #profileImageBubble {
+      border-radius: 50%;
+      height: 192px;
+      width: 192px;
+      background-color: #2D3155; }
+    #root #profileLayout #profileImage-wrapper {
+      border-radius: 50%;
+      position: absolute; }
+    #root #profileLayout #socialMediaTray-container {
+      background-color: #FFFFFF;
+      border-radius: 24px;
+      height: 48px;
+      padding: 8px 0px;
+      width: 100%; }
+      #root #profileLayout #socialMediaTray-container .socialMediaTray {
+        justify-content: space-evenly; }
+    #root #profileLayout.horizontal {
+      width: 100%;
+      height: 192px;
+      align-items: normal;
+      border-radius: 0;
+      display: grid;
+      flex-direction: row;
+      gap: 0px;
+      position: relative; }
+      #root #profileLayout.horizontal header {
+        text-align: justify; }
+      #root #profileLayout.horizontal #header-container {
+        grid-column: 1/2;
+        grid-row: 1;
+        align-self: baseline;
+        padding-bottom: 8px; }
+        #root #profileLayout.horizontal #header-container h2, #root #profileLayout.horizontal #header-container h4 {
+          padding-left: 200px; }
+      #root #profileLayout.horizontal #intro-container {
+        display: none;
+        background-color: initial;
+        grid-column: 1;
+        grid-row: 2; }
+      #root #profileLayout.horizontal #profileImage-container {
+        grid-column: 1;
+        grid-row: 1;
+        z-index: 100; }
+      #root #profileLayout.horizontal #socialMediaTray-container {
+        border-radius: 0px;
+        position: absolute;
+        top: 48px;
+        grid-column: 1/2;
+        grid-row: 1;
+        width: 100%; }
+        #root #profileLayout.horizontal #socialMediaTray-container .socialMediaTray {
+          justify-content: flex-start;
+          gap: 32px;
+          padding-left: 200px; }
+
+@media only screen and (max-width: 650px) {
+  #root {
+    align-items: center; }
+    #root #profileLayout {
+      width: 60%;
+      min-width: 33%; }
+      #root #profileLayout .socialMediaTray {
+        justify-content: flex-start;
+        gap: 32px; }
+    #root #nav-container {
+      display: none; }
+      #root #nav-container.horizontal {
+        display: block; } }
+
 .tbt-flex-container {
   display: flex; }
 
@@ -111,6 +266,12 @@
     top: 10px;
     right: 10px; }
 
+.navbar {
+  display: grid; }
+  .navbar p {
+    text-align: center;
+    justify-content: center; }
+
 * {
   margin: 0;
   padding: 0;
@@ -123,23 +284,12 @@ p {
 #about {
   padding: 8px 0px; }
 
-body {
-  background-color: azure; }
-
 #bust {
   width: 96px;
   height: 96px;
   background-color: #0A091B;
   border: 5px solid #2867b2;
   margin-bottom: 8px; }
-
-header {
-  align-items: center;
-  display: flex;
-  text-align: center;
-  background-color: #0A091B; }
-  header * {
-    flex: auto; }
 
 #familyOlympics li {
   background-color: azure; }
@@ -157,12 +307,6 @@ header {
 
 .bold {
   font-weight: bold; }
-
-footer {
-  display: flex;
-  background-color: black; }
-  footer * {
-    flex: auto; }
 
 .bust-circle {
   height: 100%; }
@@ -224,6 +368,31 @@ footer {
   padding: 0px 64px;
   text-align: center; }
 
+#mainNav > nav.navbar {
+  grid-auto-flow: column; }
+  #mainNav > nav.navbar a {
+    background-color: #2867b2;
+    border: 5px solid #0A091B;
+    text-decoration: none;
+    width: 64px;
+    height: 64px;
+    float: left; }
+    #mainNav > nav.navbar a p {
+      color: black;
+      display: inline;
+      position: relative;
+      top: 33%; }
+    #mainNav > nav.navbar a:hover {
+      background-color: #0A091B;
+      border: 5px solid #2867b2; }
+      #mainNav > nav.navbar a:hover p {
+        color: white; }
+
+#gamesNav nav.navbar {
+  grid-auto-columns: min-content; }
+  #gamesNav nav.navbar a p {
+    text-align: justify; }
+
 #FantasyComponent {
   padding: 8px 0px; }
 
@@ -238,96 +407,8 @@ footer {
     padding: 8px 0px;
     width: 25%; }
 
-#root {
-  width: 100%;
-  height: 100%;
-  position: fixed; }
-
-#navSection {
-  column-gap: 16px;
-  display: inline-flex;
-  margin-top: 8px;
-  flex-direction: column;
-  max-width: 512px;
-  width: 50%;
-  min-width: 320px;
-  height: 85%;
-  min-height: 336px; }
-  #navSection nav {
-    float: left;
-    width: 100%;
-    display: inline-grid;
-    justify-content: center;
-    grid-auto-flow: column;
-    column-gap: 16px; }
-    #navSection nav a {
-      float: left;
-      width: 64px;
-      height: 64px;
-      background-color: #2867b2;
-      border: 5px solid #0A091B;
-      text-decoration: none; }
-      #navSection nav a p {
-        color: black;
-        display: inline;
-        position: relative;
-        top: 33%; }
-      #navSection nav a:hover {
-        background-color: #0A091B;
-        border: 5px solid #2867b2; }
-        #navSection nav a:hover p {
-          color: white; }
-
-.socailMediaButton {
-  width: 64px; }
-
 .socialMediaTray {
   align-content: baseline;
   display: flex;
-  height: 66%;
-  justify-content: space-evenly;
-  width: 66%; }
-
-@media only screen and (max-height: 550px) {
-  .grid-bust {
-    display: none; }
-  #navSection p {
-    font-size: .8em; } }
-
-@media only screen and (min-width: 500px) {
-  #navSection {
-    background: rgba(40, 103, 178, 0.75);
-    border-radius: 8%;
-    margin-top: 8px;
-    padding: 16px 16px 0px 16px; }
-    #navSection #about {
-      padding: 0px 16px; }
-    #navSection nav {
-      margin-bottom: 16px; }
-      #navSection nav a p {
-        color: white; }
-    #navSection p {
-      color: white; } }
-
-@media only screen and (max-width: 450px) {
-  #navSection {
-    display: block;
-    margin-top: 8px; }
-    #navSection nav {
-      padding: 16px 0px; }
-  #resumeContainer {
-    display: inline-flex; }
-    #resumeContainer img {
-      height: 192px;
-      width: initial; } }
-
-@media only screen and (max-width: 500px), (max-height: 700px) {
-  .grid-main {
-    padding: 0px 32px; }
-  .socialMediaTray {
-    height: 66%; }
-  .grid-container {
-    grid-template-areas: 'header' 'main' 'footer';
-    grid-template-rows: 15% 70% 15%;
-    align-content: start; } }
+  height: inherit; }
 
