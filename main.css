@@ -85,27 +85,16 @@ body {
     align-items: center; }
     #root .navbar p {
       text-align: justify; }
-    #root .navbar.horizontal {
-      height: 32px; }
-      #root .navbar.horizontal a:first-of-type {
-        padding-left: 100px; }
   #root #nav-container {
     position: absolute;
     left: 33%;
     width: 67%;
     height: 45px; }
-    #root #nav-container.horizontal {
-      position: initial;
-      left: initial;
-      width: 100%;
-      height: 32px; }
   #root #toggleViewLink {
     position: fixed;
     bottom: 0;
     z-index: 10;
     align-self: center; }
-    #root #toggleViewLink.horizontal {
-      align-self: flex-end; }
   #root #profileLayout {
     align-items: center;
     background-color: #63678B;
@@ -120,8 +109,7 @@ body {
     min-width: 33%; }
     #root #profileLayout #intro-container {
       background-color: #FFFFFF;
-      padding: 8px;
-      padding-bottom: 32px;
+      padding: 16px;
       border-radius: 24px; }
     #root #profileLayout #profileImage {
       border-radius: inherit;
@@ -144,7 +132,12 @@ body {
       width: 100%; }
       #root #profileLayout #socialMediaTray-container .socialMediaTray {
         justify-content: space-evenly; }
-    #root #profileLayout.horizontal {
+
+@media only screen and (max-width: 650px) {
+  #root {
+    align-items: center; }
+    #root #profileLayout {
+      min-width: 33%;
       width: 100%;
       height: 192px;
       align-items: normal;
@@ -153,49 +146,51 @@ body {
       flex-direction: row;
       gap: 0px;
       position: relative; }
-      #root #profileLayout.horizontal header {
+      #root #profileLayout .socialMediaTray {
+        justify-content: flex-start;
+        gap: 32px; }
+      #root #profileLayout header {
         text-align: justify; }
-      #root #profileLayout.horizontal #header-container {
+      #root #profileLayout #header-container {
         grid-column: 1/2;
         grid-row: 1;
         align-self: baseline;
         padding-bottom: 8px; }
-        #root #profileLayout.horizontal #header-container h2, #root #profileLayout.horizontal #header-container h4 {
+        #root #profileLayout #header-container h2, #root #profileLayout #header-container h4 {
           padding-left: 200px; }
-      #root #profileLayout.horizontal #intro-container {
+      #root #profileLayout #intro-container {
         display: none;
         background-color: initial;
         grid-column: 1;
         grid-row: 2; }
-      #root #profileLayout.horizontal #profileImage-container {
+      #root #profileLayout #profileImage-container {
         grid-column: 1;
         grid-row: 1;
         z-index: 100; }
-      #root #profileLayout.horizontal #socialMediaTray-container {
+      #root #profileLayout #socialMediaTray-container {
         border-radius: 0px;
         position: absolute;
         top: 48px;
         grid-column: 1/2;
         grid-row: 1;
-        width: 100%; }
-        #root #profileLayout.horizontal #socialMediaTray-container .socialMediaTray {
+        width: 100%;
+        min-height: 24px;
+        height: 24px; }
+        #root #profileLayout #socialMediaTray-container .socialMediaTray {
           justify-content: flex-start;
           gap: 32px;
           padding-left: 200px; }
-
-@media only screen and (max-width: 650px) {
-  #root {
-    align-items: center; }
-    #root #profileLayout {
-      width: 60%;
-      min-width: 33%; }
-      #root #profileLayout .socialMediaTray {
-        justify-content: flex-start;
-        gap: 32px; }
+    #root .navbar {
+      height: 32px; }
+      #root .navbar a:first-of-type {
+        padding-left: 100px; }
+    #root #toggleViewLink {
+      align-self: flex-end; }
     #root #nav-container {
-      display: none; }
-      #root #nav-container.horizontal {
-        display: block; } }
+      position: initial;
+      left: initial;
+      width: 100%;
+      height: 32px; } }
 
 .tbt-flex-container {
   display: flex; }
