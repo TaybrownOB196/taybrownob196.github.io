@@ -106,6 +106,7 @@
   padding: 4px;
   min-width: 18px;
   min-height: 18px;
+  background-color: white;
   border: 1px solid black;
   display: flex;
   place-content: center;
@@ -117,15 +118,50 @@
   cursor: pointer;
 }
 
+#fourinarow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#fourinarow .gridboard {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+#fourinarow .gridboard div {
+  padding: 4px;
+  min-width: 18px;
+  min-height: 18px;
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  place-content: center;
+  align-items: center;
+}
+#fourinarow .gamePiece {
+  height: 9px;
+  width: 9px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background: blue;
+}
+#fourinarow .red {
+  background-color: red;
+}
+#fourinarow .blue {
+  background-color: blue;
+}
 #tictactoe .gridboard {
   display: grid;
   height: 128px;
   width: 128px;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 33% 33% 33%;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: repeat(3, 33%);
 }
 #tictactoe .gridboard div {
   border: 1px solid black;
+  background-color: white;
   display: flex;
   place-content: center;
   align-items: center;
@@ -147,6 +183,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: Copperplate;
+}
+
+.opaque-bg {
+  background: #63678B;
 }
 
 #root {
@@ -176,7 +216,7 @@ body {
   align-items: center;
 }
 #root #content-container div img, #root #content-container p {
-  padding: 8px 0px;
+  padding: 0.5rem 0rem;
   width: 80%;
   min-width: 300px;
   text-align: center;
@@ -194,7 +234,7 @@ body {
 }
 #root .navbar a p {
   text-align: justify;
-  padding: 4px 8px;
+  padding: 0.25rem 0.5rem;
   border: 1px solid #2D3155;
   border-radius: 24px;
 }
@@ -225,7 +265,6 @@ body {
 #root #nav-container #content-container #projects-container nav {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 50%;
   text-align: center;
   text-align: -webkit-center;
 }
@@ -236,8 +275,8 @@ body {
   min-width: initial;
   border: 1px solid black;
   border-radius: 24px;
-  padding: 8px 0px;
-  margin: 16px 0px;
+  padding: 0.5rem 0rem;
+  margin: 1rem 0rem;
   color: #FFFFFF;
   background-color: #2D3155;
 }
@@ -258,7 +297,7 @@ body {
   border-bottom-left-radius: 64px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 2rem;
   height: 99%;
   position: absolute;
   width: 33%;
@@ -266,7 +305,7 @@ body {
 }
 #root #profileComponent #intro-container {
   background-color: #FFFFFF;
-  padding: 16px;
+  padding: 1rem;
   border-radius: 24px;
 }
 #root #profileComponent #profileImage {
@@ -289,7 +328,7 @@ body {
   background-color: #FFFFFF;
   border-radius: 24px;
   height: 48px;
-  padding: 8px 0px;
+  padding: 0.5rem 0rem;
   width: 100%;
 }
 #root #profileComponent #socialMediaTray-container .socialMediaTray {
@@ -308,12 +347,12 @@ body {
     border-radius: 0;
     display: grid;
     flex-direction: row;
-    gap: 0px;
+    gap: 0rem;
     position: relative;
   }
   #root #profileComponent .socialMediaTray {
     justify-content: flex-start;
-    gap: 32px;
+    gap: 2rem;
   }
   #root #profileComponent header {
     text-align: justify;
@@ -322,7 +361,7 @@ body {
     grid-column: 1/2;
     grid-row: 1;
     align-self: baseline;
-    padding-bottom: 8px;
+    padding-bottom: 0.5rem;
   }
   #root #profileComponent #header-container h2, #root #profileComponent #header-container h4 {
     padding-left: 200px;
@@ -350,11 +389,11 @@ body {
   }
   #root #profileComponent #socialMediaTray-container .socialMediaTray {
     justify-content: flex-start;
-    gap: 32px;
+    gap: 2rem;
     padding-left: 200px;
   }
   #root .navbar {
-    height: 32px;
+    height: 2rem;
   }
   #root .navbar a:first-of-type {
     padding-left: 100px;
@@ -366,7 +405,7 @@ body {
     position: initial;
     left: initial;
     width: 100%;
-    height: 32px;
+    height: 2rem;
   }
   #root #nav-container #content-container #tictactoe {
     display: flex;
@@ -390,8 +429,8 @@ body {
     min-width: initial;
     border: 1px solid black;
     border-radius: 24px;
-    padding: 8px 0px;
-    margin: 16px 0px;
+    padding: 0.5rem 0rem;
+    margin: 1rem 0rem;
     color: #FFFFFF;
     background-color: #2D3155;
   }
@@ -594,6 +633,20 @@ p {
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: contain;
+  z-index: -1000;
+}
+
+.opaque-bg-container {
+  position: relative;
+}
+
+.opaque-bg {
+  z-index: -1;
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  border-radius: 2rem;
+  opacity: 75%;
 }
 
 .light-blue-1 {
