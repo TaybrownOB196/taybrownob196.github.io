@@ -175,6 +175,19 @@
   padding: 0px 8px;
   margin-top: 16px;
 }
+#SandboxComponent {
+  display: flex;
+  justify-content: center;
+}
+#SandboxComponent #SandboxContainer {
+  display: flex;
+  justify-content: center;
+}
+#SandboxComponent canvas {
+  background-color: black;
+  width: 300px;
+  height: 150px;
+}
 body {
   background-color: #B6B7C7;
 }
@@ -189,6 +202,38 @@ body {
   background: #63678B;
 }
 
+.dropdown-object-container {
+  border: 1px solid black;
+}
+.dropdown-object-container .dropdown-object-header {
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 2px solid black;
+  cursor: pointer;
+  background-color: #63678B;
+}
+
+.object-list {
+  width: 90%;
+}
+.object-list .object .keyValue {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.object-list .object .keyValue .key {
+  background-color: #FFFFFF;
+  border-right: 1px solid black;
+}
+.object-list .object .keyValue .value {
+  background-color: #FFFFFF;
+  border-left: 1px solid black;
+}
+.object-list .object .keyValue .valueArray {
+  background-color: #FFFFFF;
+  border-left: 1px solid black;
+}
+
 #root {
   position: absolute;
   display: flex;
@@ -196,6 +241,37 @@ body {
   width: 100%;
   height: 100%;
   flex-direction: column;
+}
+#root .carousel {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 10% 80% 10%;
+  width: 80%;
+  height: 80%;
+  margin-top: 0.5rem;
+}
+#root .carousel .carousel-right, #root .carousel .carousel-left {
+  text-align: center;
+  background-color: #2D3155;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25%;
+  cursor: pointer;
+  border: 1px solid #63678B;
+}
+#root .carousel .carousel-right:hover, #root .carousel .carousel-left:hover {
+  color: #FFFFFF;
+  background-color: #63678B;
+}
+#root .carousel .carousel-left {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+#root .carousel .carousel-right {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 #root header {
   width: 100%;
@@ -215,11 +291,14 @@ body {
   flex-direction: column;
   align-items: center;
 }
-#root #content-container div img, #root #content-container p {
+#root #content-container div img, #root #content-container #about p, #root #content-container a p {
   padding: 0.5rem 0rem;
   width: 80%;
   min-width: 300px;
   text-align: center;
+}
+#root #content-container .object-list:first-of-type {
+  margin-top: 1rem;
 }
 #root .navbar {
   display: flex;
@@ -253,6 +332,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 1rem;
+}
+#root #nav-container #content-container #about p {
+  color: #FFFFFF;
 }
 #root #nav-container #content-container #tictactoe {
   display: flex;
@@ -389,7 +472,7 @@ body {
   }
   #root #profileComponent #socialMediaTray-container .socialMediaTray {
     justify-content: flex-start;
-    gap: 2rem;
+    gap: 1rem;
     padding-left: 200px;
   }
   #root .navbar {
@@ -502,7 +585,7 @@ body {
   font-size: 1.2em;
   cursor: pointer;
 }
-.collapsible-list ul:first-of-type {
+.collapsible-list ul:first-of-type, .collapsible-list div:first-of-type .dropdown {
   overflow-y: hidden;
 }
 
@@ -538,10 +621,6 @@ body {
 p {
   text-align: justify;
   font-size: 0.88em;
-}
-
-#about {
-  padding: 8px 0px;
 }
 
 #bust {
@@ -590,16 +669,16 @@ p {
 
 .keypad {
   display: grid;
-  row-gap: 2%;
+  row-gap: 0.5rem;
   place-items: center;
 }
 .keypad div {
   border: 1px solid black;
   /* padding: 8px; */
-  min-width: 1.75rem;
+  min-width: 1.5rem;
   /* width: 2rem; */
   /* text-align: center; */
-  height: 1.75rem;
+  height: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -624,7 +703,7 @@ p {
 
 .alphabetpad .keypad {
   grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
-  width: 20rem;
+  width: 17rem;
 }
 
 .detroit-skyline-bg {
@@ -735,13 +814,13 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 1rem;
 }
 #resumeContainer a {
   font-size: small;
 }
 #resumeContainer img {
   height: auto;
-  padding: 8px 0px;
   width: 25%;
 }
 
