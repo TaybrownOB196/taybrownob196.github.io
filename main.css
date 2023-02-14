@@ -37,7 +37,7 @@
 }
 #hangman #view #body {
   height: 48px;
-  top: -56px;
+  top: -106px;
   left: 8px;
   position: relative;
 }
@@ -118,6 +118,40 @@
   cursor: pointer;
 }
 
+#matchinggame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#matchinggame .gridboard {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+#matchinggame .gridboard div {
+  padding: 4px;
+  min-width: 18px;
+  min-height: 18px;
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  place-content: center;
+  align-items: center;
+}
+#matchinggame .gamePiece {
+  height: 9px;
+  width: 9px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background: blue;
+}
+#matchinggame .red {
+  background-color: red;
+}
+#matchinggame .blue {
+  background-color: blue;
+}
 #fourinarow {
   display: flex;
   flex-direction: column;
@@ -188,6 +222,102 @@
   width: 300px;
   height: 150px;
 }
+.formFields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: end;
+}
+.formFields label {
+  text-align: left;
+}
+
+.userInfo, .userLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userInfo label, .userInfo input, .userLogin label, .userLogin input {
+  padding: 8px 16px;
+}
+.userInfo input, .userLogin input {
+  border-radius: 8px;
+  text-align: center;
+}
+.userInfo input[type=submit], .userLogin input[type=submit] {
+  cursor: pointer;
+}
+
+.userInfoContainer, .userLoginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cardhand-container {
+  display: flex;
+  width: 500px;
+  overflow-x: scroll;
+}
+
+.reactgame {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+#deck-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+#deck-container #deckback {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+}
+
+.card {
+  width: 80px;
+  height: 112px;
+}
+.card:hover {
+  border: 2px solid red;
+}
+.card span {
+  position: relative;
+}
+.card span:first-child {
+  top: 24px;
+  left: 6px;
+}
+.card span:last-child {
+  top: 71px;
+  left: 41px;
+}
+.card span.adjustment:first-child {
+  left: 10px;
+}
+.card span.adjustment:last-child {
+  left: 54px;
+}
+
+.clubs {
+  background-image: url(623afac8873742e922a8578173711358.png);
+}
+
+.hearts {
+  background-image: url(f5e2f658cf73a2db67476e367ade7d4c.png);
+}
+
+.diamonds {
+  background-image: url(d958cfec69f2ebe8c2c54133e7b81315.png);
+}
+
+.spades {
+  background-image: url(4285905a735de46f32facce4f1a5effd.png);
+}
+
 body {
   background-color: #B6B7C7;
 }
@@ -247,7 +377,6 @@ body {
   align-items: center;
   grid-template-columns: 10% 80% 10%;
   width: 80%;
-  height: 80%;
   margin-top: 0.5rem;
 }
 #root .carousel .carousel-right, #root .carousel .carousel-left {
@@ -333,6 +462,9 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
+}
+#root #nav-container #content-container #about h1, #root #nav-container #content-container #about h2, #root #nav-container #content-container #about h3, #root #nav-container #content-container #about h4, #root #nav-container #content-container #about h5, #root #nav-container #content-container #about h6 {
+  color: #2D3155;
 }
 #root #nav-container #content-container #about p {
   color: #FFFFFF;
@@ -699,6 +831,35 @@ p {
 .numpad .keypad {
   grid-template-columns: 33% 34% 33%;
   width: 6.5rem;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.slider * {
+  position: absolute;
+}
+.slider #dot {
+  width: 16px;
+  height: 16px;
+  background-color: red;
+  border-radius: 16px;
+  z-index: 3;
+}
+.slider #line {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 100%;
+  z-index: 1;
+}
+.slider #highline {
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
+  z-index: 2;
 }
 
 .alphabetpad .keypad {
