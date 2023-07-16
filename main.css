@@ -1,3 +1,46 @@
+/*!*****************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/js/components/input/Keypad.css ***!
+  \*****************************************************************************************************************************/
+.keypad {
+  display: grid;
+  row-gap: 0.5rem;
+  place-items: center;
+}
+
+.keypad div {
+  border: 1px solid black;
+  /* padding: 8px; */
+  min-width: 1.5rem;
+  /* width: 2rem; */
+  /* text-align: center; */
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+  border-bottom: double;
+  border-right: double;
+}
+
+.keypad div:hover {
+  color: black;
+  background-color: lightgrey;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-top: double;
+  border-left: double;
+}
+/*!**********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/js/components/input/Alphabetpad.css ***!
+  \**********************************************************************************************************************************/
+.alphabetpad .keypad {
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+  width: 17rem;
+}
+/*!****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/hangman.scss ***!
+  \****************************************************************************************************************/
 #hangman {
   display: flex;
   flex-direction: column;
@@ -117,7 +160,13 @@
   background-color: black;
   cursor: pointer;
 }
+/*!*************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/grid.scss ***!
+  \*************************************************************************************************************/
 
+/*!*********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/matchinggame.scss ***!
+  \*********************************************************************************************************************/
 #matchinggame {
   display: flex;
   flex-direction: column;
@@ -152,6 +201,9 @@
 #matchinggame .blue {
   background-color: blue;
 }
+/*!*******************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/fourinarow.scss ***!
+  \*******************************************************************************************************************/
 #fourinarow {
   display: flex;
   flex-direction: column;
@@ -186,6 +238,9 @@
 #fourinarow .blue {
   background-color: blue;
 }
+/*!******************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/tictactoe.scss ***!
+  \******************************************************************************************************************/
 #tictactoe .gridboard {
   display: grid;
   height: 128px;
@@ -209,6 +264,9 @@
   padding: 0px 8px;
   margin-top: 16px;
 }
+/*!****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/sandbox.scss ***!
+  \****************************************************************************************************************/
 #SandboxComponent {
   display: flex;
   justify-content: center;
@@ -222,6 +280,28 @@
   width: 300px;
   height: 150px;
 }
+/*!************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/sit.scss ***!
+  \************************************************************************************************************/
+#SITComponent {
+  display: flex;
+  justify-content: center;
+}
+#SITComponent #SITContainer {
+  display: flex;
+  justify-content: center;
+}
+#SITComponent canvas {
+  image-rendering: pixelated;
+  background-color: lightgrey;
+  background-color: #8f563b;
+}
+#SITComponent .tbt-spritesheet {
+  display: none;
+}
+/*!**************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/forms.scss ***!
+  \**************************************************************************************************************/
 .formFields {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -252,6 +332,68 @@
   align-items: center;
   justify-content: center;
 }
+
+input.showAnswer.valid {
+  background: green;
+}
+
+input.showAnswer.invalid {
+  background: red;
+}
+
+.problems {
+  display: grid;
+  grid-template-columns: 64px 64px;
+  column-gap: 16px;
+  justify-content: space-around;
+}
+
+.problem {
+  width: 128px;
+  height: 64px;
+  text-align: right;
+}
+.problem.vertical * {
+  text-align: right;
+  float: left;
+  clear: left;
+  width: 32px;
+}
+.problem.vertical :first-child {
+  width: 64px;
+}
+.problem.vertical .operator {
+  text-align: left;
+}
+.problem.vertical .equalSign {
+  display: none;
+}
+.problem.vertical .equalBar {
+  width: 64px;
+  border-top: 2px solid black;
+}
+.problem.vertical input {
+  width: 64px;
+  border-width: 0px;
+}
+.problem.horizontal * {
+  text-align: center;
+  width: 32px;
+  padding-right: 8px;
+}
+.problem.horizontal .operator {
+  text-align: left;
+}
+.problem.horizontal .equalBar {
+  display: none;
+}
+.problem.horizontal input {
+  width: 32px;
+  border-width: 0px;
+}
+/*!**********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/profilelayout.scss ***!
+  \**********************************************************************************************************************/
 #cardhand-container {
   display: flex;
   width: 500px;
@@ -654,6 +796,9 @@ body {
     background-color: #FFFFFF;
   }
 }
+/*!**************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/index.scss ***!
+  \**************************************************************************************************************/
 .tbt-flex-container {
   display: flex;
 }
