@@ -164,43 +164,6 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/grid.scss ***!
   \*************************************************************************************************************/
 
-/*!*********************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/matchinggame.scss ***!
-  \*********************************************************************************************************************/
-#matchinggame {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#matchinggame .gridboard {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-}
-#matchinggame .gridboard div {
-  padding: 4px;
-  min-width: 18px;
-  min-height: 18px;
-  background-color: white;
-  border: 1px solid black;
-  display: flex;
-  place-content: center;
-  align-items: center;
-}
-#matchinggame .gamePiece {
-  height: 9px;
-  width: 9px;
-  border: 1px solid black;
-  border-radius: 8px;
-  background: blue;
-}
-#matchinggame .red {
-  background-color: red;
-}
-#matchinggame .blue {
-  background-color: blue;
-}
 /*!*******************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/fourinarow.scss ***!
   \*******************************************************************************************************************/
@@ -264,22 +227,6 @@
   padding: 0px 8px;
   margin-top: 16px;
 }
-/*!****************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/sandbox.scss ***!
-  \****************************************************************************************************************/
-#SandboxComponent {
-  display: flex;
-  justify-content: center;
-}
-#SandboxComponent #SandboxContainer {
-  display: flex;
-  justify-content: center;
-}
-#SandboxComponent canvas {
-  background-color: black;
-  width: 300px;
-  height: 150px;
-}
 /*!************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/sit.scss ***!
   \************************************************************************************************************/
@@ -299,98 +246,6 @@
 #SITComponent .tbt-spritesheet {
   display: none;
 }
-/*!**************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/forms.scss ***!
-  \**************************************************************************************************************/
-.formFields {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: end;
-}
-.formFields label {
-  text-align: left;
-}
-
-.userInfo, .userLogin {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.userInfo label, .userInfo input, .userLogin label, .userLogin input {
-  padding: 8px 16px;
-}
-.userInfo input, .userLogin input {
-  border-radius: 8px;
-  text-align: center;
-}
-.userInfo input[type=submit], .userLogin input[type=submit] {
-  cursor: pointer;
-}
-
-.userInfoContainer, .userLoginContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-input.showAnswer.valid {
-  background: green;
-}
-
-input.showAnswer.invalid {
-  background: red;
-}
-
-.problems {
-  display: grid;
-  grid-template-columns: 64px 64px;
-  column-gap: 16px;
-  justify-content: space-around;
-}
-
-.problem {
-  width: 128px;
-  height: 64px;
-  text-align: right;
-}
-.problem.vertical * {
-  text-align: right;
-  float: left;
-  clear: left;
-  width: 32px;
-}
-.problem.vertical :first-child {
-  width: 64px;
-}
-.problem.vertical .operator {
-  text-align: left;
-}
-.problem.vertical .equalSign {
-  display: none;
-}
-.problem.vertical .equalBar {
-  width: 64px;
-  border-top: 2px solid black;
-}
-.problem.vertical input {
-  width: 64px;
-  border-width: 0px;
-}
-.problem.horizontal * {
-  text-align: center;
-  width: 32px;
-  padding-right: 8px;
-}
-.problem.horizontal .operator {
-  text-align: left;
-}
-.problem.horizontal .equalBar {
-  display: none;
-}
-.problem.horizontal input {
-  width: 32px;
-  border-width: 0px;
-}
 /*!**********************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/profilelayout.scss ***!
   \**********************************************************************************************************************/
@@ -404,6 +259,10 @@ input.showAnswer.invalid {
   height: 500px;
   display: flex;
   justify-content: center;
+}
+
+#header-container {
+  height: 45px;
 }
 
 #deck-container {
@@ -468,6 +327,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: Copperplate;
+}
+
+.profile-content-container {
+  padding: 1rem 0rem;
+  border-radius: 24px;
+  width: 95%;
 }
 
 .opaque-bg {
@@ -547,11 +412,11 @@ body {
 #root header {
   width: 100%;
   background-color: #FFFFFF;
-  text-align: center;
+  text-align: -webkit-center;
 }
 #root p {
   text-align: justify;
-  font-size: 0.88em;
+  font-size: 1em;
 }
 #root #profileImage-container {
   width: 192px;
@@ -572,7 +437,7 @@ body {
   margin-top: 1rem;
 }
 #root .navbar {
-  display: flex;
+  display: none;
   width: 100%;
   justify-content: space-evenly;
   height: inherit;
@@ -598,6 +463,7 @@ body {
   left: 33%;
   width: 67%;
   height: 45px;
+  margin-top: 250px;
 }
 #root #nav-container #content-container #about {
   display: flex;
@@ -650,20 +516,22 @@ body {
 #root #profileComponent {
   align-items: center;
   background-color: #63678B;
-  border-bottom-right-radius: 64px;
-  border-bottom-left-radius: 64px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  height: 99%;
+  height: 100%;
   position: absolute;
   width: 33%;
   min-width: 33%;
 }
+#root #profileComponent > :first-child {
+  margin-top: 250px;
+}
 #root #profileComponent #intro-container {
   background-color: #FFFFFF;
-  padding: 1rem;
-  border-radius: 24px;
+}
+#root #profileComponent #intro-container p {
+  font-size: 0.88em;
 }
 #root #profileComponent #profileImage {
   border-radius: inherit;
@@ -683,10 +551,7 @@ body {
 }
 #root #profileComponent #socialMediaTray-container {
   background-color: #FFFFFF;
-  border-radius: 24px;
   height: 48px;
-  padding: 0.5rem 0rem;
-  width: 100%;
 }
 #root #profileComponent #socialMediaTray-container .socialMediaTray {
   justify-content: space-evenly;
@@ -707,6 +572,9 @@ body {
     gap: 0rem;
     position: relative;
   }
+  #root #profileComponent > :first-child {
+    margin-top: initial;
+  }
   #root #profileComponent .socialMediaTray {
     justify-content: flex-start;
     gap: 2rem;
@@ -715,12 +583,13 @@ body {
     text-align: justify;
   }
   #root #profileComponent #header-container {
+    height: 45px;
     grid-column: 1/2;
     grid-row: 1;
     align-self: baseline;
     padding-bottom: 0.5rem;
   }
-  #root #profileComponent #header-container h2, #root #profileComponent #header-container h4 {
+  #root #profileComponent #header-container h2, #root #profileComponent #header-container h4, #root #profileComponent #header-container h5 {
     padding-left: 200px;
   }
   #root #profileComponent #intro-container {
@@ -728,6 +597,20 @@ body {
     background-color: initial;
     grid-column: 1;
     grid-row: 2;
+  }
+  #root #profileComponent #resumeContainer {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    padding-left: 200px;
+    display: initial;
+    flex-direction: initial;
+    align-items: initial;
+    border-radius: initial;
+    background-color: initial;
+  }
+  #root #profileComponent #resumeContainer h3 a {
+    color: gold;
   }
   #root #profileComponent #profileImage-container {
     grid-column: 1;
@@ -750,6 +633,7 @@ body {
     padding-left: 200px;
   }
   #root .navbar {
+    display: none;
     height: 2rem;
   }
   #root .navbar a:first-of-type {
@@ -759,6 +643,7 @@ body {
     align-self: flex-end;
   }
   #root #nav-container {
+    margin-top: 50px;
     position: initial;
     left: initial;
     width: 100%;
@@ -807,6 +692,18 @@ body {
   display: grid;
   height: inherit;
   width: inherit;
+}
+
+.tbt-game-container_v1 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background: black;
 }
 
 .tbt-grid-header, .grid-header {
@@ -1120,14 +1017,10 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1rem;
+  background-color: #2D3155;
 }
-#resumeContainer a {
-  font-size: small;
-}
-#resumeContainer img {
-  height: auto;
-  width: 25%;
+#resumeContainer h3 a {
+  color: gold;
 }
 
 .socialMediaTray {
